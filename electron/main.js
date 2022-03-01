@@ -1,26 +1,23 @@
 const {app, BrowserWindow} = require('electron')
-let fortyEight
-
+const path = require('path')
 function createWindow () {
-  // create window
-  fortyEight = new BrowserWindow({width: 800, height: 600})
-  //load index
-  fortyEight.loadFile('index.html')
-  fortyEight.on('closed', function () {
-    fortyEight = null
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   })
+  mainWindow.loadFile('index.html')
 }
-app.on('ready', createWindow)
-//stop when windows killed
-app.on('window-all-closed', function () {
-//macos quit
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+app.whenReady().then(() => {
+  createWindow()
+  app.on('activate', function () {
+    //start from dock
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
 })
-app.on('activate', function () {
-//reopen
-  if (fortyEight === null) {
-    createWindow()
-  }
+//quit unless macos
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
 })
