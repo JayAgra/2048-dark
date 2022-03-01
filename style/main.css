@@ -615,7 +615,7 @@ hr {
     line-height: 1.65; }
 
   .restart-button {
-    width: 42%;
+    width: 100%;
     padding: 0;
     display: block;
     box-sizing: border-box;
@@ -633,7 +633,7 @@ hr {
     -ms-user-select: none;
     -ms-touch-action: none;
     touch-action: none;
-    background: #bbada0;
+    background: #5c5c5c;
     border-radius: 6px;
     width: 280px;
     height: 280px;
@@ -679,7 +679,7 @@ hr {
           display: none; }
       .game-container .game-message.game-won {
         background: rgba(237, 194, 46, 0.5);
-        color: #f9f6f2; }
+        color: #8f7a66; }
         .game-container .game-message.game-won a.keep-playing-button {
           display: inline-block; }
       .game-container .game-message.game-won, .game-container .game-message.game-over {
