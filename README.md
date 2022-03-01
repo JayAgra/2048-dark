@@ -5,9 +5,9 @@ I did NOT make 2048, this is just my improvements on <a href="https://github.com
 Note the electron app is not nearly complete at the moment. Still not built, still no binaries. I will keep building the web version before the native apps.
 ## Installing / hosting
 To install 2048 locally, simply navigate to one of the releases and download the binary for your OS. <br>
-To host this, clone only the web branch.
+To host the page, clone the repo.
 ```
-git clone --single-branch --branch web https://github.com/JayAgra/2048-dark.git
+git clone https://github.com/JayAgra/2048-dark.git
 ```
 ## Tiles
 Tiles go up to 131072! <br>
