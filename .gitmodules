@@ -1,7 +1,0 @@
-[submodule "web"]
-	path = web
-	url = https://github.com/JayAgra/2048-dark/tree/web
-  
-[submodule "electron"]
-	path = electron
-	url = https://github.com/JayAgra/2048-dark/tree/electron
