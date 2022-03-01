@@ -1,4 +1,4 @@
-const {twenty, BrowserWindow} = require('electron')
+const {app, BrowserWindow} = require('electron')
 let fortyEight
 
 function createWindow () {
@@ -10,15 +10,15 @@ function createWindow () {
     fortyEight = null
   })
 }
-twenty.on('ready', createWindow)
+app.on('ready', createWindow)
 //stop when windows killed
-twenty.on('window-all-closed', function () {
+app.on('window-all-closed', function () {
 //macos quit
   if (process.platform !== 'darwin') {
-    twenty.quit()
+    app.quit()
   }
 })
-twenty.on('activate', function () {
+app.on('activate', function () {
 //reopen
   if (fortyEight === null) {
     createWindow()
