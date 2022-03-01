@@ -1,2 +1,3 @@
 # 2048-dark
-2048 Dark Mode
+A dark mode for 2048
+Note the electron app is not nearly complete at the moment
