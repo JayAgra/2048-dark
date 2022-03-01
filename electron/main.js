@@ -1,19 +1,26 @@
-const {app, BrowserWindow, twentyfortyEight} = require('electron');
-const http = require('http');
+const {app, BrowserWindow} = require('electron')
+let mainWindow
 
-twentyfortyEight.start({submitURL: 'http://127.0.0.1:7382', companyName: 'twentyfortyEight'});
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+function createWindow () {
+  // create window
+  mainWindow = new BrowserWindow({width: 800, height: 600})
+  //load index
+  mainWindow.loadFile('index.html')
+  mainWindow.on('closed', function () {
+    mainWindow = null
+  })
 }
-
-var server = http.createServer
-
-var mainWindow = null;
-app.on('ready', function() {
-  server.listen(9999, '127.0.0.1', function () {
-    mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: {nodeIntegration: true}});
-    mainWindow.loadURL('file://' + __dirname + '/index.html');
-    mainWindow.toggleDevTools();
-  });
-});
+app.on('ready', createWindow)
+//stop when windows killed
+app.on('window-all-closed', function () {
+//macos quit
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+app.on('activate', function () {
+//reopen
+  if (mainWindow === null) {
+    createWindow()
+  }
+})
