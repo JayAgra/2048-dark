@@ -1,19 +1,13 @@
-const {app, BrowserWindow, crashReporter} = require('electron');
+const {app, BrowserWindow, twentyfortyEight} = require('electron');
 const http = require('http');
 
-crashReporter.start({submitURL: 'http://127.0.0.1:9999', companyName: 'sample'});
+twentyfortyEight.start({submitURL: 'http://127.0.0.1:7382', companyName: 'twentyfortyEight'});
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// Crash-report collection server
-var server = http.createServer(function(req, res) {
-  // Handle the uploaded crash report from client here
-  // ...
-  // Response the crash report id on server to client.
-  res.end(getRandomInt(1000, 9999).toString());
-});
+var server = http.createServer
 
 var mainWindow = null;
 app.on('ready', function() {
