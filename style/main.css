@@ -5,11 +5,13 @@ html, body {
   background: #121212;
   color: #fff;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px; }
+  font-size: 18px; 
+  overflow-x:hidden
+}
 
 body {
   margin: 1rem 0;
-  height: 100%; overflow: hidden}
+  height: 100%; overflow: hidden; overflow-x:hidden; position: relative}
 
 .heading:after {
   content: "";
