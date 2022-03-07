@@ -1,0 +1,15 @@
+{
+    "name": "2048",
+    "version": "1.1.0",
+    "description": "literally the web version but stuck in an electron app",
+    "main": "main-electron.js",
+    "scripts": {
+      "start": "electron ."
+    },
+    "repository": "https://github.com/JayAgra/2048-dark",
+    "author": "JayAgra",
+    "license": "MIT",
+    "devDependencies": {
+      "electron": "^16.0.1"
+    }
+  }
